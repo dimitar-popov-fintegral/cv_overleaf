@@ -1,0 +1,210 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.2, 11 February 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.1cm, right=1.1cm,top=1.5cm, bottom=1.5cm, columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{Mint2}{HTML}{17e3b3}
+\definecolor{Mint}{HTML}{13d4a7}
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mint}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Dimitar Popov}
+\tagline{Quantitative Developer}
+%% You can add multiple photos on the left or right
+%\photoR{2.8cm}{Globe_High}
+%\photoL{2.5cm}{Yacht_High,Suitcase_High}
+\personalinfo{
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{dimich2007@gmail.com}
+  \phone{+65 9421 5142}
+  \mailaddress{11 West Coast Walk}
+  \location{Singapore, 127156}
+  \github{github.com/dimitar-popov-fintegral}
+  \printinfo{\faGlobe}{EU citizen}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Experience}
+\cvevent{Quantitative Developer}{Credit Suisse - International Wealth Management}{Oct 2017 -- Ongoing}{Zurich}
+\begin{itemize}
+\item Built a wealth-management platform combining portfolio optimisation, monte-carlo simulation,
+strategic and tactical asset allocation using Python, C++, Flask
+\item Automated translating quantitative views into investment recommendations
+by developing a single-page application in Python, Flask, JavaScript
+\item Achieved \textasciitilde 1s solution time in high-dimensional portfolio optimisation by
+way of convex approximation and Google Cloud Compute Engine 
+\item Cleaning, preparation and deployment of financial time-series data for \textasciitilde $10ˆ4$ 
+instruments using Redis, pandas and numpy
+
+\end{itemize}
+
+\divider
+
+\cvevent{Quantitative Risk Management Consultant}{Fintegral Consulting AG/Ltd}{July 2015 -- Sep 2017}{Zurich/London}
+\begin{itemize}
+\item Developed and tested software for regression pricing of derivative products in Python
+\item Prototyped and developed a proxy-pricer for quick approximations of derivative exposures in Python
+\item Used a proprietary key-value database to manage parameters of $10^5$ derivative products 
+\item Convex optimisation of collateral portfolios for a Swiss stock exchange. 
+Relative entropy minimisation for scenario analysis
+\end{itemize}
+
+\divider
+
+\cvevent{Department Tutor Econometrics, Economics}{Stellenbosch University - Department of Economics}{Jan 2013 -- Dec 2014}{Stellenbosch}
+\begin{itemize}
+\item Taught econometric theory, modeling, implementation and the use of statistical software to postgraduate students. 
+\item Taught theoretical, statistical and mathematical concepts of micro- and macroeconomics to undergraduate students
+\item Taught international trade and finance to intermediate undergraduate students
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{References}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Marcin Snarski}{Credit Suisse - Tech Lead}{mr.snarski@gmail.com}
+
+\divider
+
+\cvref{J{\"o}rg Behrens}{Fintegral AG - CEO}{joerg.behrens@fintegral.com}
+
+
+\medskip
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Skills and Strengths}
+\cvtag{Python}    
+\cvtag{C/C++}
+\cvtag{R}
+\cvtag{Linux/Bash}\\
+\cvtag{JavaScript}
+\cvtag{Matlab}
+\cvtag{Docker}\\
+\divider\smallskip
+
+\cvtag{Portfolio optimisation}
+\cvtag{Statistical Analysis}\\
+\cvtag{cvxpy}
+\cvtag{redis}
+\cvtag{Google Cloud Compute}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{In my spare time...}
+\cvachievement{\faTrophy}{Audited Courses @ETH Zurich}{Introduction and Advanced Machine Learning, Probabilistic Artificial Intelligence}
+\divider
+
+\cvachievement{\faTrophy}{Stanford Online: Statistical Learning}{Passed with distinction}
+\divider
+
+\cvachievement{\faTrophy}{World Championship of Econometrics 2014, 2015}{University of Amsterdam. First team ever invited from African university}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Languages}
+\cvskill{English}{5}
+\cvskill{Russian}{3}
+\cvskill{German}{3}
+\cvskill{Bulgarian}{5}
+\cvskill{Afrikaans}{1}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+\medskip
+
+\cvsection{Education}
+
+\cvevent{M.Sc.\ Exchange Student - Quantitative Finance}{ETH Zurich / University of Zurich}{Jan 2015 -- Dec 2015}{}
+Thesis title: Constructing and evaluating a collateral management paradigm
+
+\divider
+\cvevent{MComm Economics}{Stellenbosch University}{Jan 2014 -- Dec 2015}{}
+Graduated \textit{cum laude} in the 97.8\textsuperscript{th} percentile
+
+\divider
+\cvevent{BComm Hons.}{Stellenbosch University}{Jan 2010 -- Dec 2013}{}
+
+\end{paracol}
+
+\end{document}
